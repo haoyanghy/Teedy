@@ -61,6 +61,10 @@
     <org.apache.maven.plugins.maven-war-plugin.version>3.3.2</org.apache.maven.plugins.maven-war-plugin.version>
     <org.apache.maven.plugins.maven-surefire-plugin.version>3.0.0</org.apache.maven.plugins.maven-surefire-plugin.version>
     <org.eclipse.jetty.jetty-maven-plugin.version>11.0.20</org.eclipse.jetty.jetty-maven-plugin.version>
+    <org.apache.maven.plugins.maven-project-info-reports-plugin.version>3.4.5</org.apache.maven.plugins.maven-project-info-reports-plugin.version>
+    <org.apache.maven.plugins.maven-javadoc-plugin.version>3.5.0</org.apache.maven.plugins.maven-javadoc-plugin.version>
+    <org.apache.maven.plugins.maven-surefire-report-plugin.version>3.0.0</org.apache.maven.plugins.maven-surefire-report-plugin.version>
+    <org.apache.maven.plugins.maven-site-plugin.version>3.12.1</org.apache.maven.plugins.maven-site-plugin.version>
   </properties>
 
   <scm>
@@ -116,9 +120,75 @@
         <artifactId>jetty-maven-plugin</artifactId>
         <version>${org.eclipse.jetty.jetty-maven-plugin.version}</version>
       </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-site-plugin</artifactId>
+        <version>${org.apache.maven.plugins.maven-site-plugin.version}</version>
+        <configuration>
+          <generateReports>true</generateReports>
+        </configuration>
+      </plugin>
     </plugins>
   </build>
 
+<!--  <reporting>-->
+<!--    <plugins>-->
+<!--      &lt;!&ndash; Project Info Reports &ndash;&gt;-->
+<!--      <plugin>-->
+<!--        <groupId>org.apache.maven.plugins</groupId>-->
+<!--        <artifactId>maven-project-info-reports-plugin</artifactId>-->
+<!--        <version>${org.apache.maven.plugins.maven-project-info-reports-plugin.version}</version>-->
+<!--        <reportSets>-->
+<!--          <reportSet>-->
+<!--            <reports>-->
+<!--              <report>index</report>-->
+<!--              <report>dependencies</report>-->
+<!--              <report>dependency-management</report>-->
+<!--              <report>modules</report>-->
+<!--              <report>scm</report>-->
+<!--              <report>summary</report>-->
+<!--            </reports>-->
+<!--          </reportSet>-->
+<!--        </reportSets>-->
+<!--      </plugin>-->
+
+<!--      &lt;!&ndash; Javadoc Reports &ndash;&gt;-->
+<!--      <plugin>-->
+<!--        <groupId>org.apache.maven.plugins</groupId>-->
+<!--        <artifactId>maven-javadoc-plugin</artifactId>-->
+<!--        <version>${org.apache.maven.plugins.maven-javadoc-plugin.version}</version>-->
+<!--        <configuration>-->
+<!--          <source>${maven.compiler.source}</source>-->
+<!--          <detectOfflineLinks>false</detectOfflineLinks>-->
+<!--          <failOnError>false</failOnError>-->
+<!--        </configuration>-->
+<!--        <reportSets>-->
+<!--          <reportSet>-->
+<!--            <id>html</id>-->
+<!--            <reports>-->
+<!--              <report>javadoc</report>-->
+<!--            </reports>-->
+<!--          </reportSet>-->
+<!--        </reportSets>-->
+<!--      </plugin>-->
+
+<!--      &lt;!&ndash; Test Reports &ndash;&gt;-->
+<!--      <plugin>-->
+<!--        <groupId>org.apache.maven.plugins</groupId>-->
+<!--        <artifactId>maven-surefire-report-plugin</artifactId>-->
+<!--        <version>${org.apache.maven.plugins.maven-surefire-report-plugin.version}</version>-->
+<!--        <reportSets>-->
+<!--          <reportSet>-->
+<!--            <reports>-->
+<!--              <report>report-only</report>-->
+<!--            </reports>-->
+<!--          </reportSet>-->
+<!--        </reportSets>-->
+<!--      </plugin>-->
+<!--    </plugins>-->
+<!--  </reporting>-->
+<!--  -->
   <modules>
     <module>docs-core</module>
     <module>docs-web-common</module>
